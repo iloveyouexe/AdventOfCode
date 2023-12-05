@@ -18,8 +18,8 @@ namespace AdventOfCode.Days
                     char lastChar = line[line.Length - 1];
 
                     // Convert characters to integers
-                    int firstDigit = int.Parse(firstChar.ToString());
-                    int lastDigit = int.Parse(lastChar.ToString());
+                    int firstDigit = firstChar - '0';
+                    int lastDigit = lastChar - '0';
 
                     // Calculate the calibration value and add it to the sum
                     int calibrationValue = (firstDigit * 10) + lastDigit;
