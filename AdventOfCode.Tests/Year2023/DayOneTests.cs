@@ -1,11 +1,10 @@
-﻿using NUnit.Framework;
-using AdventOfCode.Days; // Importing DayOne class namespace
+﻿using AdventOfCode.Days;
 
-namespace AdventOfCode.DaysTests
+namespace AdventOfCode.Tests.Year2023
 {
     public class DayOneTests
     {
-        [Test]
+        [Fact]
         public void TestCalibrationSum()
         {
             // Arrange
@@ -16,7 +15,7 @@ namespace AdventOfCode.DaysTests
             int actualSum = DayOne.CalculateCalibrationSum(testInput);
 
             // Assert
-            Assert.Equals(expectedSum, actualSum);
+            Assert.Equal(expectedSum, actualSum);
         }
     }
 }

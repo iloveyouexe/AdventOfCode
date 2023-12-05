@@ -1,5 +1,4 @@
-﻿using System;
-using AdventOfCode.Days; // Import the namespace where DayOne class resides
+﻿using AdventOfCode.Days;
 
 namespace AdventOfCode
 {
