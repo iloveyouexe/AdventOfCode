@@ -4,7 +4,7 @@ namespace AdventOfCode.Days
 {
     public class DayOne
     {
-        public static int CalculateCalibrationSum(string[] lines)
+        public static string Solve(string[] lines)
         {
             int sum = 0;
 
@@ -27,7 +27,7 @@ namespace AdventOfCode.Days
                 }
             }
 
-            return sum;
+            return sum.ToString();
         }
     }
 }

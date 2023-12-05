@@ -6,25 +6,11 @@ namespace AdventOfCode
     {
         static void Main()
         {
-            Console.WriteLine("Choose a day to run:");
-            Console.WriteLine("1. Day One");
-            // Add more options for other days
-
-            int choice = int.Parse(Console.ReadLine());
-
-            switch (choice)
-            {
-                case 1:
-                    // Call DayOne logic here
-                    string[] dayOneInput = LoadDayInput("day1.txt"); // Load input for Day One from a file
-                    int dayOneResult = DayOne.CalculateCalibrationSum(dayOneInput);
-                    Console.WriteLine($"Result for Day One: {dayOneResult}");
-                    break;
-                // Add cases for other days
-                default:
-                    Console.WriteLine("Invalid choice");
-                    break;
-            }
+           
+            string[] input = LoadDayInput("Year2023/day1.txt"); // Load input for Day One from a file
+            string result = DayOne.Solve(input);
+            Console.WriteLine($"Result: {result}");
+              
         }
 
         // Load input file for a specific day (Example method)
