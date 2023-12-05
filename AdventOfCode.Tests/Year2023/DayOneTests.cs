@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Days;
+﻿using AdventOfCode.Year2023;
 
 namespace AdventOfCode.Tests.Year2023
 {
@@ -12,7 +12,7 @@ namespace AdventOfCode.Tests.Year2023
             string expectedSum = "142";
 
             // Act
-            string actualSum = DayOne.Solve(testInput);
+            string actualSum = Day1.Solve(testInput);
 
             // Assert
             Assert.Equal(expectedSum, actualSum);

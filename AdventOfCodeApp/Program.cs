@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Days;
+﻿using AdventOfCode.Year2023;
 
 namespace AdventOfCode
 {
@@ -6,11 +6,15 @@ namespace AdventOfCode
     {
         static void Main()
         {
-           
-            string[] input = LoadDayInput("Year2023/day1.txt"); // Load input for Day One from a file
-            string result = DayOne.Solve(input);
+
+            // Load inputs for Days problems
+            string[] input = LoadDayInput("Year2023/day1.txt"); 
+            string result = Day1.Solve(input);
             Console.WriteLine($"Result: {result}");
-              
+
+            input = LoadDayInput("Year2023/day2.txt"); 
+            result = Day2.Solve(input);
+            Console.WriteLine($"Result: {result}");
         }
 
         // Load input file for a specific day (Example method)
