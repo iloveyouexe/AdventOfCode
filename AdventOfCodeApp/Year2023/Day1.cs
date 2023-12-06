@@ -7,22 +7,39 @@ public class Day1
         var sum = 0;
 
         foreach (var line in lines)
-            // Check if the line is not empty
-            if (!string.IsNullOrWhiteSpace(line))
+        {
+            // Find the first digit in the line
+            var firstDigitIndex = -1;
+            for (int i = 0; i < line.Length; i++)
             {
-                // Extracting the first and last characters as digits
-                var firstChar = line[0];
-                var lastChar = line[line.Length - 1];
+                if (char.IsDigit(line[i]))
+                {
+                    firstDigitIndex = i;
+                    break;
+                }
+            }
 
-                // Convert characters to integers
-                var firstDigit = firstChar - '0';
-                var lastDigit = lastChar - '0';
+            // Find the last digit in the line
+            var lastDigitIndex = -1;
+            for (int i = line.Length - 1; i >= 0; i--)
+            {
+                if (char.IsDigit(line[i]))
+                {
+                    lastDigitIndex = i;
+                    break;
+                }
+            }
 
-                // Calculate the calibration value and add it to the sum
+            // If both first and last digits are found, extract and calculate the value
+            if (firstDigitIndex != -1 && lastDigitIndex != -1)
+            {
+                var firstDigit = line[firstDigitIndex] - '0';
+                var lastDigit = line[lastDigitIndex] - '0';
                 var calibrationValue = firstDigit * 10 + lastDigit;
                 sum += calibrationValue;
             }
-
+        }
+        
         return sum.ToString();
     }
 }
