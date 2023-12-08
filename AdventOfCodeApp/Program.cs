@@ -7,8 +7,8 @@ internal class Program
     private static void Main()
     {
         // Load inputs for Days problems
-        var input = LoadDayInput("Year2023/day1.txt");
-        var result = Day1.Solve(input);
+        var input = LoadDayInput("Year2023/Day01/day1.txt");
+        var result = Day1A.Solve(input);
         Console.WriteLine($"Result: {result}");
 
         input = LoadDayInput("Year2023/day2.txt");

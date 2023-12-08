@@ -13,11 +13,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="Year2023\day1.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
         <None Update="Year2023\day2.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Year2023\Day01\day1.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
