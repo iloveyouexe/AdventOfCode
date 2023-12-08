@@ -9,11 +9,11 @@ internal class Program
         // Load inputs for Days problems
         var input = LoadDayInput("Year2023/Day01/day1.txt");
         var result = Day1A.Solve(input);
-        Console.WriteLine($"Result: {result}");
+        Console.WriteLine($"Day 1 Result: {result}");
 
-        input = LoadDayInput("Year2023/day2.txt");
-        result = Day2.Solve(input);
-        Console.WriteLine($"Result: {result}");
+        input = LoadDayInput("Year2023/Day02/day2.txt");
+        result = Day2A.Solve(input);
+        Console.WriteLine($"Day 2 Result: {result}");
     }
 
     // Load input file for a specific day (Example method)
