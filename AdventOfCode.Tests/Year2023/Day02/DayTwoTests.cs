@@ -23,6 +23,7 @@ namespace AdventOfCode.Tests.Year2023
             var actualSum = int.Parse(actualSumString); // Convert the string to an int
 
             // Assert
+            //Do the thing
             Assert.Equal(expectedSum, actualSum);
         }
     }
