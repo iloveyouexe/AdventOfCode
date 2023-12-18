@@ -20,6 +20,7 @@
                 }
 
                 // Find the last digit in the line
+                // Fixed - working now
                 var lastDigitIndex = -1;
                 for (int i = line.Length - 1; i >= 0; i--)
                 {
