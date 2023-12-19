@@ -1,31 +1,37 @@
-﻿using AdventOfCode.Year2023;
+﻿using System.IO;
+using AdventOfCode.Year2018;
+using AdventOfCode.Year2023;
 
-namespace AdventOfCode;
-
-internal class Program
+namespace AdventOfCode
 {
-    private static void Main()
+    internal class Program
     {
-        // Load inputs for Days problems
-        var input = LoadDayInput("Year2023/Day01/day2.txt");
-        var result = Day1A.Solve(input);
-        Console.WriteLine($"Day 1 Result: {result}");
+        private static void Main()
+        {
+            // Load inputs for Days problems
+            // Call Day2A from Year2018 namespace
+            var input = LoadDayInput("../../../Year2018/Day02/day2.txt");
+            var result = Year2018.Day02.Day2A.Solve(input);
+            Console.WriteLine($"Day 2 Result (Year2018): {result}");
+            
+            input = LoadDayInput("Year2023/Day01/day1.txt");
+            result = Day1A.Solve(input);
+            Console.WriteLine($"Day 1 Result (Year 2023): {result}");
 
-        input = LoadDayInput("Year2023/Day02/day2.txt");
-        result = Day2A.Solve(input);
-        Console.WriteLine($"Day 2 Result: {result}");
-        
-        input = LoadDayInput("Year2018/Day02/day2.txt");
-        result = Day2A.Solve(input);
-        Console.WriteLine($"Day 2 Result: {result}");
-    }
+            // Call Day2A from Year2023 namespace
+            // input = LoadDayInput("Year2023/Day02/day2.txt");
+            // result = Year2023.Day02.Day2A.Solve(input);
+            // Console.WriteLine($"Day 2 Result (Year2023): {result}");
 
-    // Load input file for a specific day (Example method)
-    private static string[] LoadDayInput(string filename)
-    {
-        // Read input file and return as string array
-        // Example code to read file contents
-        var input = File.ReadAllLines(filename);
-        return input;
+        }
+
+        // Load input file for a specific day (Example method)
+        private static string[] LoadDayInput(string filename)
+        {
+            // Read input file and return as string array
+            // Example code to read file contents
+            var input = File.ReadAllLines(filename);
+            return input;
+        }
     }
 }
