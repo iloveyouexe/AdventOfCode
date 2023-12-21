@@ -8,8 +8,12 @@ namespace AdventOfCode
     {
         private static void Main()
         {
-            var input = LoadDayInput("../../../Year2018/Day02/day2.txt");
-            var result = Year2018.Day02.Day2A.Solve(input);
+            var input = LoadDayInput("../../../Year2018/Day01/day1.txt");
+            var result = Year2018.Day01.Day1A.Solve(input);
+            Console.WriteLine($"Day 1A Result (Year2018): {result}");
+            
+            input = LoadDayInput("../../../Year2018/Day02/day2.txt");
+            result = Year2018.Day02.Day2A.Solve(input);
             Console.WriteLine($"Day 2A Result (Year2018): {result}");
             
             input = LoadDayInput("../../../Year2018/Day02/day2.txt"); 
