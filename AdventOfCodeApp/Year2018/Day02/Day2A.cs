@@ -24,7 +24,7 @@ namespace AdventOfCode.Year2018.Day02
             int checksum = exactlyTwo * exactlyThree;
             return checksum.ToString();
         }
-
+        // 
         static bool HasExactlyTwoRepeatingCharacters(string boxID)
         {
             Dictionary<char, int> charCount = new Dictionary<char, int>();
@@ -53,6 +53,20 @@ namespace AdventOfCode.Year2018.Day02
             }
 
             return charCount.ContainsValue(3);
+        }
+        
+        
+        //Way of doing it utilizing ascii
+        static bool HasExactlyThreeRepeatingCharacters2(string boxID)
+        {
+            var charCount = new int[26];
+            
+            foreach (var c in boxID)
+            {
+                charCount[c-'a']++;
+            }
+
+            return charCount.Any(cnt => cnt == 3);
         }
     }
 }
