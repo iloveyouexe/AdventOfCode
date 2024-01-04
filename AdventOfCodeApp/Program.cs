@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using AdventOfCode.Year2016.Day12;
 using AdventOfCode.Year2018;
 using AdventOfCode.Year2023;
 
@@ -23,6 +24,10 @@ namespace AdventOfCode
             input = LoadDayInput("Year2023/Day01/day1.txt");
             result = Day1A.Solve(input);
             Console.WriteLine($"Day 1A Result (Year 2023): {result}");
+            
+            input = LoadDayInput("Year2016/Day12/day12.txt");
+            result = Day12A.Solve(input);
+            Console.WriteLine($"Day 12A Result (Year 2016): {result}");
   
             // Call Day2A from Year2023 namespace
             // input = LoadDayInput("Year2023/Day02/day2.txt");
