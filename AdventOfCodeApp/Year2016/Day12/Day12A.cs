@@ -5,7 +5,7 @@ public static class Day12A
     public static string Solve(string[] opCodes)
     {
         var computer = new AssembunnyComputer();
-
+        computer.Execute(opCodes);
         return computer.A.ToString();
     }
 }
