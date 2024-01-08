@@ -28,12 +28,6 @@ namespace AdventOfCode
             input = LoadDayInput("Year2023/Day01/day1.txt");
             Console.WriteLine($"Day 1A Result (Year 2023): {result}");
             result = Day1A.Solve(input);
-            
-  
-            // Call Day2A from Year2023 namespace
-            // input = LoadDayInput("Year2023/Day02/day2.txt");
-            // result = Year2023.Day02.Day2A.Solve(input);
-            // Console.WriteLine($"Day 2 Result (Year2023): {result}");
 
         }
 
