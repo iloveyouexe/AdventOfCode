@@ -26,8 +26,8 @@ namespace AdventOfCode
             Console.WriteLine($"Day 2B Result (Year2018): {result}");
             
             input = LoadDayInput("Year2023/Day01/day1.txt");
-            Console.WriteLine($"Day 1A Result (Year 2023): {result}");
             result = Day1A.Solve(input);
+            Console.WriteLine($"Day 1A Result (Year 2023): {result}");
 
         }
 
