@@ -42,6 +42,7 @@ public class AssembunnyComputer
                 if (jumpValue != 0)
                 {
                     // Perform the jump
+                    //
                     currentIndex += value;
                 }
                 else
