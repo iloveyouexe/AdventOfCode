@@ -54,6 +54,7 @@ public class AssembunnyComputer
             else if (command == "inc")
             {
                 // Handle the increment command
+                //
                 IncrementRegister(register);
                 currentIndex++;
             }
