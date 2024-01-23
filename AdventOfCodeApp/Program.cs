@@ -13,6 +13,10 @@ namespace AdventOfCode
             var result = Day12A.Solve(input);
             Console.WriteLine($"Day 12A Result (Year 2016): {result}");
             
+            input = LoadDayInput("../../../Year2017/Day23/day23.txt");
+            result = Year2017.Day23A.Solve(input);
+            Console.WriteLine($"Day 23A Result (Year2017): {result}");
+            
             input = LoadDayInput("../../../Year2018/Day01/day1.txt");
             result = Year2018.Day01.Day1A.Solve(input);
             Console.WriteLine($"Day 1A Result (Year2018): {result}");
