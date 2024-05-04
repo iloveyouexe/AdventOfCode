@@ -1,47 +1,77 @@
-﻿using System.IO;
-using AdventOfCode.Year2016.Day12;
-using AdventOfCode.Year2018;
-using AdventOfCode.Year2023;
+﻿using System;
+using System.IO;
+using System.Reflection;
 
 namespace AdventOfCode
 {
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        public static void Main()
         {
-            var input = LoadDayInput("Year2016/Day12/day12.txt");
-            var result = Day12A.Solve(input);
-            Console.WriteLine($"Day 12A Result (Year 2016): {result}");
-            
-            input = LoadDayInput("../../../Year2017/Day23/day23.txt");
-            result = Year2017.Day23A.Solve(input);
-            Console.WriteLine($"Day 23A Result (Year2017): {result}");
-            
-            input = LoadDayInput("../../../Year2018/Day01/day1.txt");
-            result = Year2018.Day01.Day1A.Solve(input);
-            Console.WriteLine($"Day 1A Result (Year2018): {result}");
-            
-            input = LoadDayInput("../../../Year2018/Day02/day2.txt");
-            result = Year2018.Day02.Day2A.Solve(input);
-            Console.WriteLine($"Day 2A Result (Year2018): {result}");
-            
-            input = LoadDayInput("../../../Year2018/Day02/day2.txt"); 
-            result = Year2018.Day02.Day2B.Solve(input);
-            Console.WriteLine($"Day 2B Result (Year2018): {result}");
-            
-            input = LoadDayInput("Year2023/Day01/day1.txt");
-            result = Day1A.Solve(input);
-            Console.WriteLine($"Day 1A Result (Year 2023): {result}");
+            ProblemSolver solver = new ProblemSolver();
 
+            solver.SolveProblem("2016", "01", "A");
+            solver.SolveProblem("2016", "12", "A");
+            solver.SolveProblem("2017", "23", "A");
+            solver.SolveProblem("2018", "01", "A");
+            solver.SolveProblem("2023", "01", "A");
+            solver.SolveProblem("2023", "01", "B");
+            solver.SolveProblem("2023", "02", "A");
         }
+    }
 
-        // Load input file for a specific day (Example method)
-        private static string[] LoadDayInput(string filename)
+    public static class InputReader
+    {
+        public static string[] ReadInput(string year, string day, string variant)
         {
-            // Read input file and return as string array
-            // Example code to read file contents
-            var input = File.ReadAllLines(filename);
-            return input;
+            string path = $"Year{year}/Day{day}/day{day}.txt";
+            try
+            {
+                string input = File.ReadAllText(path).Trim(); 
+                return input.Split(", "); 
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine($"Failed to read {path}: {e.Message}");
+                return new string[0];
+            }
         }
+    }
+
+    public class ProblemSolver
+    {
+        public void SolveProblem(string year, string day, string variant)
+        {
+            string typeName = $"AdventOfCode.Year{year}.Day{day}.Day{day}{variant}";
+            Console.WriteLine($"Attempting to load type: {typeName}");
+    
+            Type type = Type.GetType(typeName + ", " + Assembly.GetExecutingAssembly().FullName);
+            if (type == null)
+            {
+                Console.WriteLine("Type not found. Ensure namespace and class are correct, and assembly is loaded.");
+                return;
+            }
+
+            MethodInfo solveMethod = type.GetMethod("Solve");
+            if (solveMethod == null)
+            {
+                Console.WriteLine("Solve method not found in the type specified.");
+                return;
+            }
+
+            string[] input = InputReader.ReadInput(year, day, variant);
+            object result = solveMethod.Invoke(null, new object[] { input });
+            if (result == null)
+            {
+                Console.WriteLine("Result is null. There may have been an error during execution.");
+                return;
+            }
+            Console.WriteLine($"Result for Year {year} Day {day}{variant}: {result.ToString()}");
+        }
+    }
+
+    public interface IAdventOfCodeProblem
+    {   
+        string Solve(string[] input);
     }
 }

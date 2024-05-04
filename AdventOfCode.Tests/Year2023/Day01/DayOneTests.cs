@@ -12,7 +12,7 @@ public class DayOneTests
         var expectedSum = "142";
 
         // Act
-        var actualSum = Day1A.Solve(testInput);
+        var actualSum = Day01A.Solve(testInput);
 
         // Assert
         Assert.Equal(expectedSum, actualSum);
@@ -26,7 +26,7 @@ public class DayOneTests
         var expectedSum = "281";
 
         // Act
-        var actualSum = Day1B.Solve(testInput);
+        var actualSum = Day01B.Solve(testInput);
 
         // Assert
         Assert.Equal(expectedSum, actualSum);

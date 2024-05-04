@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Year2023
 {
-    public class Day1A
+    public class Day01A
     {
         public static string Solve(string[] lines)
         {

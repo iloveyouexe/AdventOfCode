@@ -4,8 +4,10 @@ public static class Day23A
 {
     public static string Solve(string[] opCodes)
     {
+        //TODO look into return statement
         var computer = new AssembunnyComputer();
         computer.Execute(opCodes);
+        return "";
     }
 }
 

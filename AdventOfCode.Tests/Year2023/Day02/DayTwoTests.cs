@@ -19,7 +19,7 @@ namespace AdventOfCode.Tests.Year2023
             var expectedSum = 8;
 
             // Act
-            var actualSumString = Day2A.Solve(testInput);
+            var actualSumString = Day02A.Solve(testInput);
             var actualSum = int.Parse(actualSumString); // Convert the string to an int
 
             // Assert

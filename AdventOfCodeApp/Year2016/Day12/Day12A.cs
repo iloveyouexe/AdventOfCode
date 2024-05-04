@@ -31,7 +31,6 @@ public class AssembunnyComputer
             
             // Console.WriteLine($"currentIndex: {currentIndex}, opCode: {opCode}, parts: [{string.Join(", ", parts)}]");
             
-
             string command = parts[0];
             string param1 = parts[1];
             string param2 = parts.Length > 2 ? parts[2] : string.Empty;

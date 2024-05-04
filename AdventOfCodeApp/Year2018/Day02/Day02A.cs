@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode.Year2018.Day02
 {
-    public class Day2A
+    public class Day02A
     {
         public static string Solve(string[] lines)
         {

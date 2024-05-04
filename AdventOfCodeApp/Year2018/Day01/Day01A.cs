@@ -1,6 +1,6 @@
 namespace AdventOfCode.Year2018.Day01;
 
-public class Day1A
+public class Day01A
 {
     public static string Solve(string[] changes)
     {

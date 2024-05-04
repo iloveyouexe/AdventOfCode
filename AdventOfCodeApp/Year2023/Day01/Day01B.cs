@@ -1,7 +1,7 @@
 
 namespace AdventOfCode.Year2023
 {
-    public class Day1B
+    public class Day01B
     {
         private static readonly Dictionary<string, int> NumberWords = new Dictionary<string, int>
         {
