@@ -12,6 +12,8 @@ namespace AdventOfCode
 
             solver.SolveProblem("2016", "01", "A");
             solver.SolveProblem("2016", "01", "B");
+            solver.SolveProblem("2016", "02", "A");
+            solver.SolveProblem("2016", "03", "A");
             solver.SolveProblem("2016", "12", "A");
             solver.SolveProblem("2017", "23", "A");
             solver.SolveProblem("2018", "01", "A");
@@ -53,7 +55,7 @@ namespace AdventOfCode
                 return;
             }
 
-            MethodInfo solveMethod = type.GetMethod("Solve");
+            MethodInfo solveMethod = type.GetMethod("Solve"); 
             if (solveMethod == null)
             {
                 Console.WriteLine("Solve method not found in the type specified.");
