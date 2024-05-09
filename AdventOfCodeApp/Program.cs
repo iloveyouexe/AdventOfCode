@@ -14,6 +14,7 @@ namespace AdventOfCode
             solver.SolveProblem("2016", "01", "B");
             solver.SolveProblem("2016", "02", "A");
             solver.SolveProblem("2016", "03", "A");
+            solver.SolveProblem("2016", "04", "A");
             solver.SolveProblem("2016", "12", "A");
             solver.SolveProblem("2017", "23", "A");
             solver.SolveProblem("2018", "01", "A");

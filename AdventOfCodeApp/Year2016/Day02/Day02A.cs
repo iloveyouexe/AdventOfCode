@@ -39,7 +39,7 @@ public class Day02A
                 }
                 catch (IndexOutOfRangeException)
                 {
-                    // Swallow the exception and continue with the last valid x or y
+                    return "Out of range exception";
                 }
             }
             code += keypad[x, y].ToString();
