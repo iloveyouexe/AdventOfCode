@@ -9,40 +9,29 @@ public class Day02A
             { 4, 5, 6 },
             { 7, 8, 9 }
         };
-        
+
         int x = 1; 
-        int y = 1; 
-        
+        int y = 1;
+
         string code = "";
-        
+
         foreach (string instruction in instructions)
         {
-            for (int i = 0; i < instruction.Length; i++)
+            foreach (char command in instruction)
             {
-                try
+                int prevX = x, prevY = y; 
+                switch (command)
                 {
-                    switch (instruction[i])
-                    {
-                        case 'U':
-                            x = (x > 0) ? x - 1 : throw new IndexOutOfRangeException();
-                            break;
-                        case 'D':
-                            x = (x < 2) ? x + 1 : throw new IndexOutOfRangeException();
-                            break;
-                        case 'L':
-                            y = (y > 0) ? y - 1 : throw new IndexOutOfRangeException();
-                            break;
-                        case 'R':
-                            y = (y < 2) ? y + 1 : throw new IndexOutOfRangeException();
-                            break;
-                    }
+                    case 'U': if (x > 0) x -= 1; break;
+                    case 'D': if (x < 2) x += 1; break;
+                    case 'L': if (y > 0) y -= 1; break;
+                    case 'R': if (y < 2) y += 1; break;
                 }
-                catch (IndexOutOfRangeException)
-                {
-                    return "Out of range exception";
-                }
+                // Debugging output
+                Console.WriteLine($"Moved {command}: Position now at ({x}, {y}) with key {keypad[x, y]}");
             }
-            code += keypad[x, y].ToString();
+            code += keypad[x, y].ToString(); 
+            Console.WriteLine($"Current code: {code}"); 
         }
         return code;
     }
