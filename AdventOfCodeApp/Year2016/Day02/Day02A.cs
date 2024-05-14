@@ -1,38 +1,41 @@
-namespace AdventOfCode.Year2016.Day02;
+using System;
 
-public class Day02A
+namespace AdventOfCode.Year2016.Day02
 {
-    public static string Solve(string[] instructions)
+    public class Day02A
     {
-        int[,] keypad = {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
-        };
-
-        int x = 1; 
-        int y = 1;
-
-        string code = "";
-
-        foreach (string instruction in instructions)
+        public static string Solve(string[] instructions)
         {
-            foreach (char command in instruction)
+            int[,] keypad = {
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            };
+
+            int x = 1; 
+            int y = 1;
+
+            string code = "";
+            
+            string[] lines = string.Join(Environment.NewLine, instructions)
+                .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string instruction in lines)
             {
-                int prevX = x, prevY = y; 
-                switch (command)
+                foreach (char command in instruction)
                 {
-                    case 'U': if (x > 0) x -= 1; break;
-                    case 'D': if (x < 2) x += 1; break;
-                    case 'L': if (y > 0) y -= 1; break;
-                    case 'R': if (y < 2) y += 1; break;
+                    switch (command)
+                    {
+                        case 'U': if (x > 0) x -= 1; break;
+                        case 'D': if (x < 2) x += 1; break;
+                        case 'L': if (y > 0) y -= 1; break;
+                        case 'R': if (y < 2) y += 1; break;
+                    }
                 }
-                // Debugging output
-                Console.WriteLine($"Moved {command}: Position now at ({x}, {y}) with key {keypad[x, y]}");
+                code += keypad[x, y].ToString(); 
+                Console.WriteLine($"Current code: {code}"); 
             }
-            code += keypad[x, y].ToString(); 
-            Console.WriteLine($"Current code: {code}"); 
+            return code;
         }
-        return code;
     }
 }
