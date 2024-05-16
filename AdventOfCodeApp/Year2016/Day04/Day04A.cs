@@ -10,6 +10,7 @@ namespace AdventOfCode.Year2016.Day04
         public static string Solve(string[] instructions)
         {
             int sumOfSectorIds = 0;
+            
             instructions = instructions[0].Split("\n", StringSplitOptions.RemoveEmptyEntries);
             
             foreach (var instruction in instructions)
@@ -27,7 +28,6 @@ namespace AdventOfCode.Year2016.Day04
                     }
                 }
             }
-
             return sumOfSectorIds.ToString();
         }
 

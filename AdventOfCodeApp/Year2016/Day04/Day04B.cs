@@ -7,6 +7,8 @@ public class Day04B
     public static string Solve(string[] instructions)
     {
         int sumOfSectorIds = 0;
+        var validInstructions = new List<string>();
+        
         instructions = instructions[0].Split("\n", StringSplitOptions.RemoveEmptyEntries);
             
         foreach (var instruction in instructions)
@@ -21,10 +23,10 @@ public class Day04B
                 if (IsRealRoom(encryptedName, checksum))
                 {
                     sumOfSectorIds += sectorId;
+                    validInstructions.Add(instruction);
                 }
             }
         }
-
         return sumOfSectorIds.ToString();
     }
     
@@ -49,7 +51,6 @@ public class Day04B
             .Take(5);
 
         var calculatedChecksum = new string(sortedLetters.ToArray());
-
         return calculatedChecksum == checksum;
     }
 }
