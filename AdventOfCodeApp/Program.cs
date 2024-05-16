@@ -48,7 +48,7 @@ namespace AdventOfCode
         public void SolveProblem(string year, string day, string variant)
         {
             string typeName = $"AdventOfCode.Year{year}.Day{day}.Day{day}{variant}";
-            Console.WriteLine($"Attempting to load type: {typeName}");
+            Console.WriteLine($"Loading {year}/{day}/{variant}...");
     
             Type type = Type.GetType(typeName + ", " + Assembly.GetExecutingAssembly().FullName);
             if (type == null)
@@ -71,7 +71,7 @@ namespace AdventOfCode
                 Console.WriteLine("Result is null. There may have been an error during execution.");
                 return;
             }
-            Console.WriteLine($"Result for Year {year} Day {day}{variant}: {result.ToString()}");
+            Console.WriteLine($"Result: {result.ToString()}");
         }
     }
 

@@ -1,6 +1,6 @@
 namespace AdventOfCode.Year2017.Day23;
 
-public static class Day23A
+public class Day23A
 {
     public static string Solve(string[] opCodes)
     {

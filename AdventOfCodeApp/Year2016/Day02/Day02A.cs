@@ -33,7 +33,6 @@ namespace AdventOfCode.Year2016.Day02
                     }
                 }
                 code += keypad[x, y].ToString(); 
-                Console.WriteLine($"Current code: {code}"); 
             }
             return code;
         }

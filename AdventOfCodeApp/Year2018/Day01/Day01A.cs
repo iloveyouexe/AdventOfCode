@@ -1,18 +1,26 @@
-namespace AdventOfCode.Year2018.Day01;
-
-public class Day01A
+namespace AdventOfCode.Year2018.Day01
 {
-    public static string Solve(string[] changes)
+    public class Day01A
     {
-        // current
-        int resultFrequency = 0;
-
-        foreach (string frequencyChange in changes)
+        public static string Solve(string[] changes)
         {
-            int change = int.Parse(frequencyChange);
+            int resultFrequency = 0;
 
-            resultFrequency += change;
+            foreach (string frequencyChange in changes)
+            {
+                try
+                {
+                    string cleanedChange = frequencyChange.Trim('\'');
+                    int change = int.Parse(cleanedChange);
+
+                    resultFrequency += change;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine($"Invalid format: ");
+                }
+            }
+            return resultFrequency.ToString();
         }
-        return resultFrequency.ToString();
     }
 }
