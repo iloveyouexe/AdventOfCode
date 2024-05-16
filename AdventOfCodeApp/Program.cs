@@ -10,18 +10,20 @@ namespace AdventOfCode
         {
             ProblemSolver solver = new ProblemSolver();
 
-            solver.SolveProblem("2016", "01", "A");
-            solver.SolveProblem("2016", "01", "B");
-            solver.SolveProblem("2016", "02", "A");
-            solver.SolveProblem("2016", "02", "B");
-            solver.SolveProblem("2016", "03", "A");
-            solver.SolveProblem("2016", "04", "A");
-            solver.SolveProblem("2016", "12", "A");
-            solver.SolveProblem("2017", "23", "A");
-            solver.SolveProblem("2018", "01", "A");
-            solver.SolveProblem("2023", "01", "A");
-            solver.SolveProblem("2023", "01", "B");
-            solver.SolveProblem("2023", "02", "A");
+            // solver.SolveProblem("2016", "01", "A");
+            // solver.SolveProblem("2016", "01", "B");
+            // solver.SolveProblem("2016", "02", "A");
+            // solver.SolveProblem("2016", "02", "B");
+            // solver.SolveProblem("2016", "03", "A");
+            // solver.SolveProblem("2016", "04", "A");
+            // solver.SolveProblem("2016", "04", "B");
+            solver.SolveProblem("2016", "05", "A");
+            // solver.SolveProblem("2016", "12", "A");
+            // solver.SolveProblem("2017", "23", "A");
+            // solver.SolveProblem("2018", "01", "A");
+            // solver.SolveProblem("2023", "01", "A");
+            // solver.SolveProblem("2023", "01", "B");
+            // solver.SolveProblem("2023", "02", "A");
         }
     }
 
