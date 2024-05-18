@@ -26,7 +26,6 @@ public class Day05A
                 index++;
             }
         }
-        
         return password;
     }
 }
