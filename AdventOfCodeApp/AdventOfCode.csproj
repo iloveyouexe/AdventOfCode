@@ -49,6 +49,9 @@
         <None Update="Year2016\Day06\day06.txt">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Update="Year2016\Day07\day07.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
@@ -77,6 +80,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Compile>
       <Compile Update="Year2016\Day06\Day06A.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="Year2016\Day07\Day07A.cs">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Compile>
     </ItemGroup>
