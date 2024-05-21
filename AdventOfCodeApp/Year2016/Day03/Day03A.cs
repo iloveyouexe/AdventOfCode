@@ -1,8 +1,8 @@
 namespace AdventOfCode.Year2016.Day03;
 
-public class Day03A
+public class Day03A : IAdventOfCodeProblem
 {
-    public static string Solve(string[] instructions)
+    public string Solve(string[] instructions)
     {
         int validTriangles = 0;
 

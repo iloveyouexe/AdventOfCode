@@ -3,9 +3,9 @@ using System.Text;
 
 namespace AdventOfCode.Year2016.Day05;
 
-public class Day05A
+public class Day05A : IAdventOfCodeProblem
 {
-    public static string Solve(string[] doorIdArray)
+    public string Solve(string[] doorIdArray)
     {
         string doorId = doorIdArray[0];
         string password = "";

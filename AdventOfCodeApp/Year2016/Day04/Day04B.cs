@@ -6,9 +6,9 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode.Year2016.Day04
 {
-    public class Day04B
+    public class Day04B : IAdventOfCodeProblem
     {
-        public static string Solve(string[] instructions)
+        public string Solve(string[] instructions)
         {
             int sumOfSectorIds = 0;
             var validInstructions = new List<(string EncryptedName, int SectorId)>();

@@ -1,8 +1,8 @@
 namespace AdventOfCode.Year2016.Day01;
 
-public static class Day01A
+public class Day01A : IAdventOfCodeProblem
 {
-    public static string Solve(string[] directions)
+    public string Solve(string[] directions)
     {
         int x = 0, y = 0;
         int directionIndex = 0;

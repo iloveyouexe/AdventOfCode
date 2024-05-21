@@ -10,15 +10,16 @@ namespace AdventOfCode
         {
             ProblemSolver solver = new ProblemSolver();
 
-            // solver.SolveProblem("2016", "01", "A");
-            // solver.SolveProblem("2016", "01", "B");
-            // solver.SolveProblem("2016", "02", "A");
-            // solver.SolveProblem("2016", "02", "B");
-            // solver.SolveProblem("2016", "03", "A");
-            // solver.SolveProblem("2016", "04", "A");
-            // solver.SolveProblem("2016", "04", "B");
-            // solver.SolveProblem("2016", "05", "A");
+            solver.SolveProblem("2016", "01", "A");
+            solver.SolveProblem("2016", "01", "B");
+            solver.SolveProblem("2016", "02", "A");
+            solver.SolveProblem("2016", "02", "B");
+            solver.SolveProblem("2016", "03", "A");
+            solver.SolveProblem("2016", "04", "A");
+            solver.SolveProblem("2016", "04", "B");
+            solver.SolveProblem("2016", "05", "A");
             solver.SolveProblem("2016", "05", "B");
+            solver.SolveProblem("2016", "06", "A");
             // solver.SolveProblem("2016", "12", "A");
             // solver.SolveProblem("2017", "23", "A");
             // solver.SolveProblem("2018", "01", "A");
@@ -68,7 +69,14 @@ namespace AdventOfCode
             }
 
             string[] input = InputReader.ReadInput(year, day, variant);
-            object result = solveMethod.Invoke(null, new object[] { input });
+            object problemInstance = Activator.CreateInstance(type);
+            if (problemInstance == null)
+            {
+                Console.WriteLine("Failed to create an instance of the specified type.");
+                return;
+            }
+            
+            object result = solveMethod.Invoke(problemInstance, new object[] { input });
             if (result == null)
             {
                 Console.WriteLine("Result is null. There may have been an error during execution.");

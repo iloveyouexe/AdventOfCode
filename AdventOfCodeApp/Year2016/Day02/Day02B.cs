@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AdventOfCode.Year2016.Day02
 {
-    public class Day02B
+    public class Day02B : IAdventOfCodeProblem
     {
-        public static string Solve(string[] instructions)
+        public string Solve(string[] instructions)
         {
             char[,] keypad = {
                 { ' ', ' ', '1', ' ', ' ' },

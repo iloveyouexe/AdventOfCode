@@ -2,9 +2,9 @@ using System;
 
 namespace AdventOfCode.Year2016.Day02
 {
-    public class Day02A
+    public class Day02A : IAdventOfCodeProblem
     {
-        public static string Solve(string[] instructions)
+        public string Solve(string[] instructions)
         {
             int[,] keypad = {
                 { 1, 2, 3 },
