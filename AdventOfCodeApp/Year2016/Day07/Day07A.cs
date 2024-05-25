@@ -17,7 +17,6 @@ namespace AdventOfCode.Year2016.Day07
 
             return count.ToString();
         }
-
         private bool SupportsTLS(string ip)
         {
             var parts = Regex.Split(ip, @"(\[.*?\])");
