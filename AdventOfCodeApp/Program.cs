@@ -21,12 +21,12 @@ namespace AdventOfCode
             // solver.SolveProblem("2016", "05", "B");
             // solver.SolveProblem("2016", "06", "A"); //TODO Idk why this just keeps printing the entire transmissionString
             solver.SolveProblem("2016", "07", "A");
-            // solver.SolveProblem("2016", "12", "A");
-            // solver.SolveProblem("2017", "23", "A");
-            // solver.SolveProblem("2018", "01", "A");
-            // solver.SolveProblem("2023", "01", "A");
-            // solver.SolveProblem("2023", "01", "B");
-            // solver.SolveProblem("2023", "02", "A");
+            solver.SolveProblem("2016", "12", "A");
+            solver.SolveProblem("2017", "23", "A");
+            solver.SolveProblem("2018", "01", "A");
+            solver.SolveProblem("2023", "01", "A");
+            solver.SolveProblem("2023", "01", "B");
+            solver.SolveProblem("2023", "02", "A");
         }
     }
 
