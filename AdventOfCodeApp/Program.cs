@@ -10,23 +10,23 @@ namespace AdventOfCode
         {
             ProblemSolver solver = new ProblemSolver();
 
-            solver.SolveProblem("2016", "01", "A");
-            solver.SolveProblem("2016", "01", "B");
-            solver.SolveProblem("2016", "02", "A");
-            solver.SolveProblem("2016", "02", "B");
+            // solver.SolveProblem("2016", "01", "A");
+            // solver.SolveProblem("2016", "01", "B");
+            // solver.SolveProblem("2016", "02", "A");
+            // solver.SolveProblem("2016", "02", "B");
             // solver.SolveProblem("2016", "03", "A");
             // solver.SolveProblem("2016", "04", "A");
             // solver.SolveProblem("2016", "04", "B");
             // solver.SolveProblem("2016", "05", "A");
             // solver.SolveProblem("2016", "05", "B");
-            // solver.SolveProblem("2016", "06", "A"); //TODO Idk why this just keeps printing the entire transmissionString
+            // solver.SolveProblem("2016", "06", "A"); 
             solver.SolveProblem("2016", "07", "A");
-            solver.SolveProblem("2016", "12", "A");
-            solver.SolveProblem("2017", "23", "A");
-            solver.SolveProblem("2018", "01", "A");
-            solver.SolveProblem("2023", "01", "A");
-            solver.SolveProblem("2023", "01", "B");
-            solver.SolveProblem("2023", "02", "A");
+            // solver.SolveProblem("2016", "12", "A");
+            // solver.SolveProblem("2017", "23", "A");
+            // solver.SolveProblem("2018", "01", "A");
+            // solver.SolveProblem("2023", "01", "A");
+            // solver.SolveProblem("2023", "01", "B");
+            // solver.SolveProblem("2023", "02", "A");
         }
     }
 
@@ -46,6 +46,20 @@ namespace AdventOfCode
                 return new string[0];
             }
         }
+        
+        // public static string[] ReadInput(string year, string day, string variant)
+        // {
+        //     string path = $"Year{year}/Day{day}/day{day}.txt";
+        //     try
+        //     {
+        //         return File.ReadAllLines(path);
+        //     }
+        //     catch (IOException e)
+        //     {
+        //         Console.WriteLine($"Failed to read {path}: {e.Message}");
+        //         return new string[0];
+        //     }
+        // }
     }
 
     public class ProblemSolver
