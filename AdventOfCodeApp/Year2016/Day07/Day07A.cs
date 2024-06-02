@@ -41,7 +41,6 @@ namespace AdventOfCode.Year2016.Day07
             }
             return hasAbbaOutsideBrackets && !hasAbbaInsideBrackets;
         }
-        
         private bool ContainsAbba(string segment)
         {
             for (int i = 0; i < segment.Length - 3; i++)
