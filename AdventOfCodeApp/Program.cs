@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace AdventOfCode
 {
@@ -9,100 +7,106 @@ namespace AdventOfCode
         public static void Main()
         {
             ProblemSolver solver = new ProblemSolver();
-
-            // solver.SolveProblem("2016", "01", "A");
-            // solver.SolveProblem("2016", "01", "B");
-            // solver.SolveProblem("2016", "02", "A");
-            // solver.SolveProblem("2016", "02", "B");
-            // solver.SolveProblem("2016", "03", "A");
-            // solver.SolveProblem("2016", "04", "A");
-            // solver.SolveProblem("2016", "04", "B");
-            // solver.SolveProblem("2016", "05", "A");
-            // solver.SolveProblem("2016", "05", "B");
-            // solver.SolveProblem("2016", "06", "A"); 
-            solver.SolveProblem("2016", "07", "A");
-            // solver.SolveProblem("2016", "12", "A");
-            // solver.SolveProblem("2017", "23", "A");
-            // solver.SolveProblem("2018", "01", "A");
-            // solver.SolveProblem("2023", "01", "A");
-            // solver.SolveProblem("2023", "01", "B");
-            // solver.SolveProblem("2023", "02", "A");
+            
+            solver.RegisterInputReader("comma", new CommaSeparatedInputReader());
+            solver.RegisterInputReader("line", new LineSeparatedInputReader());
+            
+            solver.SolveProblem("2016", "01", "A", "comma");
+            solver.SolveProblem("2016", "01", "B", "comma");
+            solver.SolveProblem("2016", "02", "A", "line");
+            solver.SolveProblem("2016", "02", "B", "line");
+            solver.SolveProblem("2016", "03", "A", "line");
+            solver.SolveProblem("2016", "04", "A", "line");
+            solver.SolveProblem("2016", "04", "B", "line");
+            solver.SolveProblem("2016", "05", "A", "line");
+            solver.SolveProblem("2016", "05", "B", "line");
+            solver.SolveProblem("2016", "06", "A", "line"); 
+            solver.SolveProblem("2016", "07", "A", "line");
+            solver.SolveProblem("2016", "12", "A", "line");
+            solver.SolveProblem("2016", "23", "A", "line");
+            // solver.SolveProblem("2017", "23", "A", "line");
+            // solver.SolveProblem("2018", "01", "A", "line");
+            // solver.SolveProblem("2023", "01", "A", "line");
+            // solver.SolveProblem("2023", "01", "B", "line");
+            // solver.SolveProblem("2023", "02", "A", "line");
         }
     }
 
-    public static class InputReader
+    public interface IInputReader
     {
-        public static string[] ReadInput(string year, string day, string variant)
+        string[] ReadInput(string path);
+    }
+
+    public class CommaSeparatedInputReader : IInputReader
+    {
+        public string[] ReadInput(string path)
         {
-            string path = $"Year{year}/Day{day}/day{day}.txt";
-            try
-            {
-                string input = File.ReadAllText(path).Trim(); 
-                return input.Split(", "); 
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine($"Failed to read {path}: {e.Message}");
-                return new string[0];
-            }
+            string input = File.ReadAllText(path).Trim();
+            return input.Split(", ").Select(s => s.Trim()).ToArray();
         }
-        
-        // public static string[] ReadInput(string year, string day, string variant)
-        // {
-        //     string path = $"Year{year}/Day{day}/day{day}.txt";
-        //     try
-        //     {
-        //         return File.ReadAllLines(path);
-        //     }
-        //     catch (IOException e)
-        //     {
-        //         Console.WriteLine($"Failed to read {path}: {e.Message}");
-        //         return new string[0];
-        //     }
-        // }
+    }
+
+    public class LineSeparatedInputReader : IInputReader
+    {
+        public string[] ReadInput(string path)
+        {
+            string input = File.ReadAllText(path).Trim();
+            return input.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(line => line.Trim())
+                        .ToArray();
+        }
     }
 
     public class ProblemSolver
     {
-        public void SolveProblem(string year, string day, string variant)
+        private readonly Dictionary<string, IInputReader?> _inputReaders = new Dictionary<string, IInputReader?>();
+
+        public void RegisterInputReader(string key, IInputReader? reader)
+        {
+            _inputReaders[key] = reader;
+        }
+
+        public void SolveProblem(string year, string day, string variant, string inputReaderKey)
         {
             string typeName = $"AdventOfCode.Year{year}.Day{day}.Day{day}{variant}";
             Console.WriteLine($"Loading {year}/{day}/{variant}...");
-    
-            Type type = Type.GetType(typeName + ", " + Assembly.GetExecutingAssembly().FullName);
+
+            Type? type = Type.GetType(typeName + ", " + Assembly.GetExecutingAssembly().FullName);
             if (type == null)
             {
                 Console.WriteLine("Type not found. Ensure namespace and class are correct, and assembly is loaded.");
                 return;
             }
 
-            MethodInfo solveMethod = type.GetMethod("Solve"); 
-            if (solveMethod == null)
+            MethodInfo solveMethod = type.GetMethod("Solve") ?? throw new InvalidOperationException();
+
+            string path = $"Year{year}/Day{day}/day{day}.txt";
+            if (!_inputReaders.TryGetValue(inputReaderKey, out IInputReader? inputReader))
             {
-                Console.WriteLine("Solve method not found in the type specified.");
+                Console.WriteLine("Input reader not found for the specified key.");
                 return;
             }
 
-            string[] input = InputReader.ReadInput(year, day, variant);
-            object problemInstance = Activator.CreateInstance(type);
+            string[] input = inputReader!.ReadInput(path);
+            object? problemInstance = Activator.CreateInstance(type);
             if (problemInstance == null)
             {
                 Console.WriteLine("Failed to create an instance of the specified type.");
                 return;
             }
-            
-            object result = solveMethod.Invoke(problemInstance, new object[] { input });
+
+            object? result = solveMethod.Invoke(problemInstance, new object[] { input });
             if (result == null)
             {
                 Console.WriteLine("Result is null. There may have been an error during execution.");
                 return;
             }
-            Console.WriteLine($"Result: {result.ToString()}");
+            Console.WriteLine($"Result: {result}");
         }
     }
 
     public interface IAdventOfCodeProblem
-    {   
+    {
         string Solve(string[] input);
     }
 }

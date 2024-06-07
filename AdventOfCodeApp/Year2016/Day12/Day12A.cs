@@ -1,8 +1,8 @@
 namespace AdventOfCode.Year2016.Day12;
 
-public static class Day12A
+public class Day12A : IAdventOfCodeProblem 
 {
-    public static string Solve(string[] opCodes)
+    public string Solve(string[] opCodes)
     {
         var computer = new AssembunnyComputer();
         computer.Execute(opCodes);
