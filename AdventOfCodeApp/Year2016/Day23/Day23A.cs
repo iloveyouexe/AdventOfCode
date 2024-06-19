@@ -52,7 +52,6 @@ namespace AdventOfCode.Year2016.Day23
                         i++;
                         break;
                 }
-                // Console.WriteLine($"Registers: a={registers['a']}, b={registers['b']}, c={registers['c']}, d={registers['d']}");
             }
         }
 
