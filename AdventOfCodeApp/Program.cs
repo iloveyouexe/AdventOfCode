@@ -11,17 +11,18 @@ namespace AdventOfCode
             solver.RegisterInputReader("comma", new CommaSeparatedInputReader());
             solver.RegisterInputReader("line", new LineSeparatedInputReader());
             
-            solver.SolveProblem("2016", "01", "A", "comma");
-            solver.SolveProblem("2016", "01", "B", "comma");
-            solver.SolveProblem("2016", "02", "A", "line");
-            solver.SolveProblem("2016", "02", "B", "line");
-            solver.SolveProblem("2016", "03", "A", "line");
-            solver.SolveProblem("2016", "04", "A", "line");
-            solver.SolveProblem("2016", "04", "B", "line");
-            solver.SolveProblem("2016", "05", "A", "line");
-            solver.SolveProblem("2016", "05", "B", "line");
-            solver.SolveProblem("2016", "06", "A", "line"); 
+            // solver.SolveProblem("2016", "01", "A", "comma");
+            // solver.SolveProblem("2016", "01", "B", "comma");
+            // solver.SolveProblem("2016", "02", "A", "line");
+            // solver.SolveProblem("2016", "02", "B", "line");
+            // solver.SolveProblem("2016", "03", "A", "line");
+            // solver.SolveProblem("2016", "04", "A", "line");
+            // solver.SolveProblem("2016", "04", "B", "line");
+            // solver.SolveProblem("2016", "05", "A", "line");
+            // solver.SolveProblem("2016", "05", "B", "line");
+            // solver.SolveProblem("2016", "06", "A", "line");
             solver.SolveProblem("2016", "07", "A", "line");
+            solver.SolveProblem("2016", "07", "B", "line");
             solver.SolveProblem("2016", "12", "A", "line");
             solver.SolveProblem("2016", "23", "A", "line");
             solver.SolveProblem("2017", "23", "A", "line");

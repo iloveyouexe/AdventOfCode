@@ -91,6 +91,9 @@
       <Compile Update="Year2016\Day23\Day23A.cs">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Compile>
+      <Compile Update="Year2016\Day07\Day07B.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
     </ItemGroup>
 
 </Project>
