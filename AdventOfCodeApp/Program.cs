@@ -21,15 +21,16 @@ namespace AdventOfCode
             // solver.SolveProblem("2016", "05", "A", "line");
             // solver.SolveProblem("2016", "05", "B", "line");
             // solver.SolveProblem("2016", "06", "A", "line");
-            solver.SolveProblem("2016", "07", "A", "line");
-            solver.SolveProblem("2016", "07", "B", "line");
-            solver.SolveProblem("2016", "12", "A", "line");
-            solver.SolveProblem("2016", "23", "A", "line");
-            solver.SolveProblem("2017", "23", "A", "line");
-            solver.SolveProblem("2018", "01", "A", "line");
-            solver.SolveProblem("2023", "01", "A", "line");
-            solver.SolveProblem("2023", "01", "B", "line");
-            solver.SolveProblem("2023", "02", "A", "line");
+            // solver.SolveProblem("2016", "07", "A", "line");
+            // solver.SolveProblem("2016", "07", "B", "line");
+            // solver.SolveProblem("2016", "12", "A", "line");
+            // solver.SolveProblem("2016", "23", "A", "line");
+            // solver.SolveProblem("2017", "23", "A", "line");
+            // solver.SolveProblem("2018", "01", "A", "line");
+            // solver.SolveProblem("2023", "01", "A", "line");
+            // solver.SolveProblem("2023", "01", "B", "line");
+            // solver.SolveProblem("2023", "02", "A", "line");
+            solver.SolveProblem("2024", "01", "A", "line");
         }
     }
 
