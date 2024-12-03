@@ -12,10 +12,6 @@ public class Day01A
             if (string.IsNullOrWhiteSpace(line)) continue;
             
             var splitLine = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            if (splitLine.Length != 2)
-            {
-                throw new FormatException($"Line '{line}' is not in the correct format (expected two numbers).");
-            }
             
             leftList.Add(int.Parse(splitLine[0].Trim()));
             rightList.Add(int.Parse(splitLine[1].Trim()));
