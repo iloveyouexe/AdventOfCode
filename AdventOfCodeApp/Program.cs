@@ -37,6 +37,8 @@ namespace AdventOfCode
             // solver.SolveProblem("2024", "03", "A", "line");
             // solver.SolveProblem("2024", "03", "B", "line");
             solver.SolveProblem("2024", "04", "A", "line");
+            solver.SolveProblem("2024", "04", "B", "line");
+            solver.SolveProblem("2024", "05", "A", "line");
         }
     }
 
